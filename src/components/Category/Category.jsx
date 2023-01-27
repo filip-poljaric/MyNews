@@ -10,7 +10,7 @@ const Cateegory = ({ Icon, text }) => {
   }
   const isActive = text.toLowerCase() === id || (!id && text === "Home");
   return (
-    <Link to={link}>
+    <Link to={link} className="link">
       <div className={`category ${isActive ? "active" : ""}`}>
         <img src={Icon} className="category-icon" alt="" />
         <p className="category-text">{text}</p>
