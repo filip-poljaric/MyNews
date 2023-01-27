@@ -33,17 +33,29 @@ const Content = ({ category }) => {
       ) {
         image = article.multimedia[1]?.url;
       }
+      function addZero(i) {
+        if (i < 10) {
+          i = "0" + i;
+        }
+        return i;
+      }
+
+      const d = new Date(article.published_date);
+      let h = addZero(d.getHours());
+      let m = addZero(d.getMinutes());
+
+      let hours = h + ":" + m;
+
       return {
         image: image,
         category: article.section,
         headline: article.title,
         author: article.byline,
-        time: article.published_date,
+        time: hours,
         url: article.url,
       };
     });
     setNews(mappedNews);
-    console.log(resJson.results);
   };
 
   useEffect(() => {
@@ -63,16 +75,31 @@ const Content = ({ category }) => {
         article.multimedia.length &&
         article.multimedia.length > 1
       ) {
-        image = article.multimedia.find(
-          (img) => img.subType === "threeByTwoSmallAt2X"
-        ).url;
+        image =
+          "https://static01.nyt.com/" +
+          article.multimedia.find(
+            (img) => img.subType === "threeByTwoSmallAt2X"
+          ).url;
       }
+
+      function addZero(i) {
+        if (i < 10) {
+          i = "0" + i;
+        }
+        return i;
+      }
+
+      const d = new Date(article.pub_date);
+      let h = addZero(d.getHours());
+      let m = addZero(d.getMinutes());
+
+      let hours = h + ":" + m;
       return {
-        image: "https://static01.nyt.com/" + image,
+        image: image,
         category: article.news_desk,
         headline: article.headline.main,
         author: article.byline.original,
-        time: article.pub_date,
+        time: hours,
         url: article.web_url,
       };
     });
@@ -128,6 +155,7 @@ const Content = ({ category }) => {
                 key={article.headline}
                 time={article.time}
                 headline={article.headline}
+                url={article.url}
               />
             ))}
           </div>
