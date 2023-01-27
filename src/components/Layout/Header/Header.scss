@@ -1,0 +1,37 @@
+.header {
+  height: 60px;
+  display: flex;
+  gap: 20px;
+  padding: 0 200px;
+  align-items: center;
+  background-image: url(../../../assets/header.jpg);
+  color: white;
+
+  &-title {
+    font-size: 16px;
+  }
+
+  &-description {
+    font-weight: normal;
+    font-size: 14px;
+    margin-right: auto;
+  }
+
+  &-get-btn {
+    width: 70px;
+    height: 35px;
+    background: #ffffff;
+    border-radius: 8px;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 5px;
+    cursor: pointer;
+  }
+
+  &-decline {
+    font-size: 14px;
+    font-weight: normal;
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,19 @@
+.latest {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  &-time {
+    color: #1e71bb;
+    margin: 10px 0 0 15px;
+
+    font-size: 10px;
+    font-weight: bold;
+  }
+  &-title {
+    margin: o auto;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 25px 10px 15px;
+  }
+}
